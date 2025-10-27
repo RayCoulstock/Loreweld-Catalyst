@@ -11,6 +11,8 @@ import { ProductGallery } from '@/vibes/soul/sections/product-detail/product-gal
 import { ProductDetailForm, ProductDetailFormAction } from './product-detail-form';
 import { Field } from './schema';
 
+import BuildYourOwn from '~/components/build-your-own'; 
+
 interface ProductDetailProduct {
   id: string;
   title: string;
@@ -90,11 +92,19 @@ export function ProductDetail<F extends Field>({
           {(product) =>
             product && (
               <div className="grid grid-cols-1 items-stretch gap-x-8 gap-y-8 @2xl:grid-cols-2 @5xl:gap-x-12">
-                <div className="group/product-gallery hidden @2xl:block">
-                  <Stream fallback={<ProductGallerySkeleton />} value={product.images}>
-                    {(images) => <ProductGallery images={images} />}
-                  </Stream>
-                </div>
+                {product.title.toLowerCase().includes('base crystal') ? (
+                  <div className="group/product-gallery @2xl:block">
+                    <BuildYourOwn  /> 
+                  </div>            
+                ) : (
+                  <div className="group/product-gallery hidden @2xl:block">
+                    display
+                    <Stream fallback={<ProductGallerySkeleton />} value={product.images}>
+                        {(images) => <ProductGallery images={images} />}
+                      </Stream>
+                  </div>
+                )}
+                
                 {/* Product Details */}
                 <div className="text-[var(--product-detail-primary-text,hsl(var(--foreground)))]">
                   {Boolean(product.subtitle) && (

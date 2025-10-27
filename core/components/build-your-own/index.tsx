@@ -35,7 +35,7 @@ export default function BuildYourOwn() {
           setColor2(c2);
         }}
       />
-      <CrystalMaterialControls {...material} onChange={setMaterial} />
+  
       <Crystal
         shape={shape as any}
         color1={color1}
