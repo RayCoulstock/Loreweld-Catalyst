@@ -7,7 +7,7 @@ interface Props {
   params: Promise<{ locale: string, ref: string }>;
 }
 
-export default async function Home({ params }: Props) {
+export default async function BuildYourOwnCrystal({ params }: Props) {
   const { locale, ref } = await params;
 
   setRequestLocale(locale);
@@ -20,7 +20,7 @@ export default async function Home({ params }: Props) {
   
   return (
     <>
-      <BuildYourOwn referrer={referrer}  /> {/* <-- Add this component here */}
+      <BuildYourOwn  /> {/* <-- Add this component here */}
     </>
   );
 }

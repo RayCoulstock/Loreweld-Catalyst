@@ -7,7 +7,7 @@ import CrystalShapePicker from './crystal/crystal-shape-picker';
 import CrystalGradientPicker from './crystal/crystal-gradient-picker';
 import CrystalMaterialControls from './crystal/crystal-material-controls';
 
-export default function BuildYourOwn({ referrer }: { referrer: string }) {
+export default function BuildYourOwn() {
   const [shape, setShape] = useState('octahedron');
   const [color1, setColor1] = useState('#00f');
   const [color2, setColor2] = useState('#0f0');
