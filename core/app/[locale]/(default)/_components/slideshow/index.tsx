@@ -5,48 +5,37 @@ import { Slideshow as SlideshowSection } from '~/vibes/soul/sections/slideshow';
 import SlideBg01 from './slide-bg-01.jpg';
 import SlideBg02 from './slide-bg-02.jpg';
 import SlideBg03 from './slide-bg-03.jpg';
+import SlideBg04 from './Loreweld-vault-staffs.png';
+import SlideBg05 from './Loreweld-vault-jewellery.png';
 
 export function Slideshow() {
   const t = useTranslations('Home.Slideshow');
 
   const slides = [
     {
-      title: t('Slide01.title'),
+      title: t('Slide04.title'),
       image: {
-        src: SlideBg01.src,
-        alt: t('Slide01.alt'),
-        blurDataUrl: SlideBg01.blurDataURL,
+        src: SlideBg04.src,
+        alt: t('Slide04.alt'),
+        blurDataUrl: SlideBg04.blurDataURL,
       },
-      description: t('Slide01.description'),
+      description: t('Slide04.description'),
       cta: {
         href: '/shop-all',
-        label: t('Slide01.cta'),
+        label: t('Slide04.cta'),
       },
     },
     {
-      title: t('Slide02.title'),
+      title: t('Slide05.title'),
       image: {
-        src: SlideBg02.src,
-        alt: t('Slide02.alt'),
-        blurDataUrl: SlideBg02.blurDataURL,
+        src: SlideBg05.src,
+        alt: t('Slide05.alt'),
+        blurDataUrl: SlideBg05.blurDataURL,
       },
-      description: t('Slide02.description'),
+      description: t('Slide05.description'),
       cta: {
         href: '/shop-all',
-        label: t('Slide02.cta'),
-      },
-    },
-    {
-      title: t('Slide03.title'),
-      image: {
-        src: SlideBg03.src,
-        alt: t('Slide03.alt'),
-        blurDataUrl: SlideBg03.blurDataURL,
-      },
-      description: t('Slide03.description'),
-      cta: {
-        href: '/shop-all',
-        label: t('Slide03.cta'),
+        label: t('Slide05.cta'),
       },
     },
   ];
