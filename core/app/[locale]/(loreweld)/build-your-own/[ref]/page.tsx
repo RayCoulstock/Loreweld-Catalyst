@@ -1,4 +1,3 @@
-import { removeEdgesAndNodes } from '@bigcommerce/catalyst-client';
 import { getFormatter, getTranslations, setRequestLocale } from 'next-intl/server';
 
 import BuildYourOwn from '~/components/build-your-own'; // <-- Add this import
@@ -20,7 +19,7 @@ export default async function BuildYourOwnCrystal({ params }: Props) {
   
   return (
     <>
-      <BuildYourOwn  /> {/* <-- Add this component here */}
+      <BuildYourOwn defaultShape="cube"/> {/* <-- Add this component here */}
     </>
   );
 }
