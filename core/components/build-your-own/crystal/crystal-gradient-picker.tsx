@@ -12,7 +12,7 @@ export default function CrystalGradientPicker({
   onChange,
 }: CrystalGradientPickerProps) {
   return (
-    <div style={{ display: 'flex', gap: 16, alignItems: 'center', marginBottom: 16 }}>
+    <div style={{ display: 'flex', gap: 16, alignItems: 'center', marginBottom: 16 }} className='justify-center'>
       <label>
         Color 1:&nbsp;
         <input

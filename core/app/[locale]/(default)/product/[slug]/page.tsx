@@ -196,6 +196,16 @@ export default async function Product({ params, searchParams }: Props) {
     return false;
   });
 
+  const streamableCrystalShape = Streamable.from(async () => {
+    const product = await streamableProduct;
+
+    const customFields = removeEdgesAndNodes(product.customFields);
+
+    const shapeField = customFields.find((field) => field.name === 'Crystal Shape');
+
+    return String(shapeField?.value ?? '');
+  });
+
   const streameableAccordions = Streamable.from(async () => {
     const product = await streamableProduct;
 
@@ -317,6 +327,7 @@ export default async function Product({ params, searchParams }: Props) {
           productId={baseProduct.entityId}
           quantityLabel={t('ProductDetails.quantity')}
           thumbnailLabel={t('ProductDetails.thumbnail')}
+          crystalShape={streamableCrystalShape ?? 'cube'}
         />
       </ProductAnalyticsProvider>
 

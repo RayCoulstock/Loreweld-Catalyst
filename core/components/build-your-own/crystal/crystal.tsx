@@ -134,7 +134,7 @@ function CrystalMesh({
 
 export default function Crystal({ shape = 'octahedron', color1 = '#00f', color2 = '#0f0' }: CrystalProps) {
   return (
-    <div style={{ width: 300, height: 300 }}>
+    <div style={{ width: 300, height: 300 }} className="mx-auto">
       <Canvas
         camera={{ position: [2, 2, 2], fov: 50 }}
         onCreated={({ gl }) => {

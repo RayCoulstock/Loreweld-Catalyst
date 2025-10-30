@@ -40,9 +40,9 @@ export default function CrystalShapePicker({ shape, onChange }: CrystalShapePick
           style={{
             padding: '8px 16px',
             borderRadius: 6,
-            border: shape === s.value ? '2px solid #aeef33' : '1px solid #ccc',
-            background: shape === s.value ? '#f7ffe6' : '#fff',
-            fontWeight: shape === s.value ? 'bold' : 'normal',
+            border: '2px solid #aeef33',
+            background: '#f7ffe6',
+            fontWeight: 'bold',
             cursor: 'pointer',
             transition: 'border 0.2s, background 0.2s',
           }}

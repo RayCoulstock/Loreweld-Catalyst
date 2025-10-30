@@ -47,6 +47,7 @@ export interface ProductDetailProps<F extends Field> {
   thumbnailLabel?: string;
   additionalInformationTitle?: string;
   additionalActions?: ReactNode;
+  crystalShape?: Streamable<string | null>;
 }
 
 // eslint-disable-next-line valid-jsdoc
@@ -79,6 +80,7 @@ export function ProductDetail<F extends Field>({
   thumbnailLabel,
   additionalInformationTitle = 'Additional information',
   additionalActions,
+  crystalShape
 }: ProductDetailProps<F>) {
   return (
     <section className="@container">
@@ -94,7 +96,7 @@ export function ProductDetail<F extends Field>({
               <div className="grid grid-cols-1 items-stretch gap-x-8 gap-y-8 @2xl:grid-cols-2 @5xl:gap-x-12">
                 {product.title.toLowerCase().includes('base crystal') ? (
                   <div className="group/product-gallery @2xl:block">
-                    <BuildYourOwn  /> 
+                    <BuildYourOwn defaultShape={crystalShape ?? 'null'}/> 
                   </div>            
                 ) : (
                   <div className="group/product-gallery hidden @2xl:block">

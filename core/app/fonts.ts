@@ -1,4 +1,4 @@
-import { DM_Serif_Text, Inter, Roboto_Mono } from 'next/font/google';
+import { DM_Serif_Text, Inter, Roboto_Mono, MedievalSharp } from 'next/font/google';
 
 export const inter = Inter({
   display: 'swap',
@@ -19,4 +19,11 @@ export const robotoMono = Roboto_Mono({
   variable: '--font-family-roboto-mono',
 });
 
-export const fonts = [inter, dmSerifText, robotoMono];
+export const medievalSharp= MedievalSharp({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: '400',
+  variable: '--font-family-medieval-sharp',
+});
+
+export const fonts = [inter, dmSerifText, robotoMono, medievalSharp];
