@@ -30,12 +30,15 @@ const DragonPageQuery = graphql(
   [ProductCardFragment],
 );
 
-export const getDragonPageData = cache(async () => {
+export const getDragonPageData = cache(async (
+  customerAccessToken?: string
+) => {
   const currencyCode = await getPreferredCurrencyCode();
   const response = await client.fetch({
     document: DragonPageQuery,
-    fetchOptions: { next: { revalidate } },
     variables: { searchTerm: 'dragon', currencyCode },
+    customerAccessToken,
+    fetchOptions: customerAccessToken ? { cache: 'no-store' } : { next: { revalidate } },
   });
 
   return response.data.site.search.searchProducts;
